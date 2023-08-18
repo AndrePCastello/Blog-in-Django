@@ -1,2 +1,3 @@
-# Blog-personal
+# personal-blog
+
 Meu-blog-pessoal
