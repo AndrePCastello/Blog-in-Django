@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AndreP.Castello</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        width: 100%;
+        height: 80px;
+    }
+
+    #my-name {
+        font-size: 20px;
+        padding-top: 12px;
+        text-align: center;
+        width: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.247);
+        border-right: 0px;
+        transition: 400ms;
+    }
+
+    #my-name > h1 > a {
+        color: black;
+        padding-left: 50px;
+        text-decoration: none;
+        transition: 400ms;
+    }
+
+    #my-name:hover {
+        background-color: black;
+    }
+
+    #my-name:hover > h1 > a {
+        color: white; 
+    }
+
+    #my-slogan {
+        font-size: 20px;
+        padding-top: 12px;
+        text-align: center;
+        width: 50%;
+        background-color: black;
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 0.555);
+    }
+
+    section{
+        padding: 20px;
+        width: 68%;
+        height: auto;
+        margin: auto;
+        margin-top: 80px;
+        background-color: aliceblue;
+        transition: 300ms;
+    }
+
+    h1{
+        padding: 10px 0px;
+    }
+
+    h2, h3, h4, h5, h6, p, a{
+        padding: 10px 0;
+    }
+
+    section:hover{
+        transform: scale(1.03);
+    }
+    
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div id="my-name">
+                <h1><a href="#">AndreP.Castello</a></h1>
+            </div>
+            <div id="my-slogan">
+                <h1>A world for explore</h1>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% for itens in posts %}
+        <section>
+            <div id="infos_post">
+                <h1>{{itens.title}}</h1>
+                <h4>{{itens.date_creat}}</h4>
+                <p>{{itens.summary}}</p>
+                <p><a href="">link</a></p>
+            </div>
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>
