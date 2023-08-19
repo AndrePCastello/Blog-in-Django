@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ckxj19v+-0&h+x35t=!7j8acxf=m!fpq$b(otwh^tqb^#-f=n+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',
-    'ckeditor'
+    'ckeditor',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -133,3 +136,7 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery
 CKEDITOR_UPLOAD_PATH = 'App/static/content_imgs'  # Pasta onde os uploads serão salvos
 CKEDITOR_IMAGE_BACKEND = 'pillow'  # Backend para processamento de imagens (instale o Pillow se necessário)
 CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False  # Impede a criação de pastas separadas para cada upload
+
+COMPRESS_ENABLED = True
+COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']

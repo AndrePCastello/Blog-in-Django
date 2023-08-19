@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 100%;
+  height: 80px;
+}
+
+#my-name {
+  font-size: 20px;
+  padding-top: 12px;
+  text-align: center;
+  width: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  border-right: 0px;
+  transition: 400ms;
+}
+
+#my-name > h1 > a {
+  color: black;
+  padding-left: 50px;
+  text-decoration: none;
+  transition: 400ms;
+}
+
+#my-name:hover {
+  background-color: black;
+}
+
+#my-name:hover > h1 > a {
+  color: white; 
+}
+
+#my-slogan {
+  font-size: 20px;
+  padding-top: 12px;
+  text-align: center;
+  width: 50%;
+  background-color: black;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.555);
+}
+
+section{
+  width: 68%;
+  height: auto;
+  margin: auto;
+  margin-top: 40px;
+  transition: 300ms;
+  padding: 14px;
+  background-color: #e6e6e6;
+  color: #4e4848;
+  text-align: justify;
+}
+
+main{
+  padding-bottom: 200px;
+}
+
+main > a{
+  text-decoration: none;
+  color: black;
+  font-size: 3vh;
+}
+
+#date{
+  width: 200px;
+  display: block;
+  background-color: #4e4848;
+  margin-left: 193px;
+  margin-top: 80px;
+  text-align: left;
+  padding: 15px;
+  font-size: 19px;
+}
+
+#date > a{
+  padding-left: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+#date > a:hover{
+  text-decoration: underline;
+}
+
+h1{
+  padding: 10px 0px;
+}
+
+h2, h3, h4, h5, h6, p, a{
+  padding: 10px 0;
+}
+
+section{
+  border-radius: 5px;
+}
+
+section:hover{
+  transform: scale(1.03);
+  box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.39);
+}
+
+section > h4 > img{
+  padding-right: 10px;
+}
+
+footer{
+  background-color: #eee;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.267);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#imgs-footer{
+  padding: 5px;
+  text-align: center;
+}

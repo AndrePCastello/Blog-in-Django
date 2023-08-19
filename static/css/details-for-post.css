@@ -1,0 +1,17 @@
+main > section{
+    background-color: white;
+    border-radius: none;
+}
+
+main > section > h1{
+    font-size: 7vh;
+}
+
+main > section:hover{
+    transform: none;
+    box-shadow: none;
+}
+
+
+
+
