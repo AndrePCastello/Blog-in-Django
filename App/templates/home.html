@@ -62,7 +62,7 @@
         width: 68%;
         height: auto;
         margin: auto;
-        margin-top: 80px;
+        margin-top: 40px;
         transition: 300ms;
         padding: 14px;
         background-color: #e6e6e6;
@@ -74,6 +74,28 @@
         text-decoration: none;
         color: black;
         font-size: 20px;
+    }
+
+    #date{
+        width: 200px;
+        display: block;
+        background-color: #4e4848;
+        margin-left: 193px;
+        margin-top: 80px;
+        text-align: left;
+        padding: 15px;
+        font-size: 19px;
+    }
+
+    #date > a{
+        padding-left: 5px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    #date > a:hover{
+        text-decoration: underline;
     }
 
     h1{
@@ -108,7 +130,7 @@
     <header>
         <nav>
             <div id="my-name">
-                <h1><a href="#">AndreP.Castello</a></h1>
+                <h1><a href="{% url 'home' %}">AndreP.Castello</a></h1>
             </div>
             <div id="my-slogan">
                 <h1>A world for explore</h1>
@@ -116,15 +138,15 @@
         </nav>
     </header>
         <main>
-            {% for itens in posts %}
-                <div>
-                    <a href="#">{{itens.date_creat|date:"Y - F"}}</a>
+            {% for item in posts %}
+                <div id="date">
+                    <a href="{% url 'posts_for_date' item.date_creat|date:'Y-m-d' %}">{{ item.date_creat|date:"F Y" }}</a>
                 </div>
                 <a href="" id="infos-post">
                     <section>
-                        <h1>{{itens.title}}</h1>
-                        <h4><img width="15" height="15" src="https://img.icons8.com/ios/15/clock--v1.png" alt="clock--v1"/>{{itens.date_creat|date:"d/m/y"}} {{itens.date_creat|time:"H:i A"}}</h4>
-                        <p>{{itens.summary}}</p>
+                        <h1>{{item.title}}</h1>
+                        <h4><img width="15" height="15" src="https://img.icons8.com/ios/15/clock--v1.png" alt="clock--v1"/>{{item.date_creat|date:"d/m/y"}} {{item.date_creat|time:"H:i A"}}</h4>
+                        <p>{{item.summary}}</p>
                     </section>
                 </a>
             {% endfor %}
