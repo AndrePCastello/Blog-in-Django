@@ -1,0 +1,11 @@
+section{
+    background-color: white;
+}
+
+section > h1{
+    font-size: 7vh;
+}
+
+section:hover{
+    transform: none;
+}

@@ -1,10 +1,10 @@
 {% extends 'home.html' %}
 
-{% block content %}
-<h2>Blogs Criados em {{ date|date:"d F Y" }}</h2>
+<body>
+    <h2>Blogs Criados em {{ date|date:"d F Y" }}</h2>
 <ul>
     {% for post in posts %}
         <li><a href="{% url 'detalhes_do_post' post.id %}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
-{% endblock %}
+</body>

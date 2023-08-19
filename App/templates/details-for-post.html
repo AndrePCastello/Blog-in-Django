@@ -1,0 +1,13 @@
+{% load static %}
+{% include 'partials/head.html' %}
+<link rel="stylesheet" href="{% static 'css/details-for-post.css' %}">
+<body>
+{% include 'partials/header.html' %}
+    <main>
+        <section>
+            <h1>{{post.title}}</h1>
+            <p>{{post.content|safe}}</p>
+        </section>
+    </main>
+{% include 'partials/footer.html' %}
+</body>

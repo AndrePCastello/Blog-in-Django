@@ -1,161 +1,19 @@
-{% load i18n %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AndreP.Castello</title>
-</head>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-evenly;
-        margin: auto;
-        width: 100%;
-        height: 80px;
-    }
-
-    #my-name {
-        font-size: 20px;
-        padding-top: 12px;
-        text-align: center;
-        width: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.247);
-        border-right: 0px;
-        transition: 400ms;
-    }
-
-    #my-name > h1 > a {
-        color: black;
-        padding-left: 50px;
-        text-decoration: none;
-        transition: 400ms;
-    }
-
-    #my-name:hover {
-        background-color: black;
-    }
-
-    #my-name:hover > h1 > a {
-        color: white; 
-    }
-
-    #my-slogan {
-        font-size: 20px;
-        padding-top: 12px;
-        text-align: center;
-        width: 50%;
-        background-color: black;
-        color: white;
-        border: 1px solid rgba(0, 0, 0, 0.555);
-    }
-
-    section{
-        width: 68%;
-        height: auto;
-        margin: auto;
-        margin-top: 40px;
-        transition: 300ms;
-        padding: 14px;
-        background-color: #e6e6e6;
-        color: #4e4848;
-        text-align: justify;
-    }
-
-    main > a{
-        text-decoration: none;
-        color: black;
-        font-size: 20px;
-    }
-
-    #date{
-        width: 200px;
-        display: block;
-        background-color: #4e4848;
-        margin-left: 193px;
-        margin-top: 80px;
-        text-align: left;
-        padding: 15px;
-        font-size: 19px;
-    }
-
-    #date > a{
-        padding-left: 5px;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-    }
-
-    #date > a:hover{
-        text-decoration: underline;
-    }
-
-    h1{
-        padding: 10px 0px;
-    }
-
-    h2, h3, h4, h5, h6, p, a{
-        padding: 10px 0;
-    }
-
-    section:hover{
-        transform: scale(1.03);
-    }
-    
-    section > h4 > img{
-        padding-right: 10px;
-    }
-
-    footer{
-        background-color: #eee;
-        margin-top: 30px;
-        border-top: 1px solid rgba(0, 0, 0, 0.267);
-    }
-
-    #imgs-footer{
-        padding: 20px;
-        text-align: center;
-    }
-</style>
-
+{% include 'partials/head.html' %}
 <body>
-    <header>
-        <nav>
-            <div id="my-name">
-                <h1><a href="{% url 'home' %}">AndreP.Castello</a></h1>
-            </div>
-            <div id="my-slogan">
-                <h1>A world for explore</h1>
-            </div>
-        </nav>
-    </header>
-        <main>
-            {% for item in posts %}
-                <div id="date">
-                    <a href="{% url 'posts_for_date' item.date_creat|date:'Y-m-d' %}">{{ item.date_creat|date:"F Y" }}</a>
-                </div>
-                <a href="" id="infos-post">
-                    <section>
-                        <h1>{{item.title}}</h1>
-                        <h4><img width="15" height="15" src="https://img.icons8.com/ios/15/clock--v1.png" alt="clock--v1"/>{{item.date_creat|date:"d/m/y"}} {{item.date_creat|time:"H:i A"}}</h4>
-                        <p>{{item.summary}}</p>
-                    </section>
-                </a>
-            {% endfor %}
-        </main>
-    <footer>
-        <div id="imgs-footer">
-            <a href="#"><img width="54" height="54" src="https://img.icons8.com/ios/54/linkedin.png" alt="linkedin"/></a>
-            <a href="#"><img width="54" height="54" src="https://img.icons8.com/glyph-neue/64/github.png" alt="github"/></a>
+{% include 'partials/header.html' %}
+<main>
+    {% for item in posts %}
+        <div id="date">
+            <a href="{% url 'posts_for_date' item.date_creat|date:'Y-m-d' %}">{{ item.date_creat|date:"F Y" }}</a>
         </div>
-    </footer>
+            <a href="{% url 'details_post' item.id %}" id="infos-post">
+                <section>
+                    <h1>{{item.title}}</h1>
+                    <h4><img width="15" height="15" src="https://img.icons8.com/ios/15/clock--v1.png" alt="clock--v1"/>{{item.date_creat|date:"d/m/y"}} {{item.date_creat|time:"H:i A"}}</h4>
+                    <p>{{item.summary}}</p>
+                </section>
+            </a>
+    {% endfor %}
+</main>
+{% include 'partials/footer.html' %}
 </body>
-</html>
