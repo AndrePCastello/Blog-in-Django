@@ -130,6 +130,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'  # Caminho para o jQuery
-CKEDITOR_UPLOAD_PATH = 'App/static/content'  # Pasta onde os uploads serão salvos
+CKEDITOR_UPLOAD_PATH = 'App/static/content_imgs'  # Pasta onde os uploads serão salvos
 CKEDITOR_IMAGE_BACKEND = 'pillow'  # Backend para processamento de imagens (instale o Pillow se necessário)
 CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False  # Impede a criação de pastas separadas para cada upload

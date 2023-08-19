@@ -1,0 +1,21 @@
+@media screen and (min-width: 300px) and (max-width: 700px){
+    #my-slogan{
+        display: none;
+    }
+
+    #my-name{
+        width: 100%;
+    }
+
+    #my-name > h1 > a{
+        padding-left: 0;
+    }
+
+    #date{
+        margin-left: 13%;
+    }
+
+    #imgs-footer > img{
+        width: 3vh;
+    }
+}

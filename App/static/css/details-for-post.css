@@ -1,11 +1,17 @@
-section{
+main > section{
     background-color: white;
+    border-radius: none;
 }
 
-section > h1{
+main > section > h1{
     font-size: 7vh;
 }
 
-section:hover{
+main > section:hover{
     transform: none;
+    box-shadow: none;
 }
+
+
+
+
