@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,13 +59,21 @@
     }
 
     section{
-        padding: 20px;
         width: 68%;
         height: auto;
         margin: auto;
         margin-top: 80px;
-        background-color: aliceblue;
         transition: 300ms;
+        padding: 14px;
+        background-color: #e6e6e6;
+        color: #4e4848;
+        text-align: justify;
+    }
+
+    main > a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
     }
 
     h1{
@@ -78,6 +88,20 @@
         transform: scale(1.03);
     }
     
+    section > h4 > img{
+        padding-right: 10px;
+    }
+
+    footer{
+        background-color: #eee;
+        margin-top: 30px;
+        border-top: 1px solid rgba(0, 0, 0, 0.267);
+    }
+
+    #imgs-footer{
+        padding: 20px;
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -91,17 +115,25 @@
             </div>
         </nav>
     </header>
-    <main>
-        {% for itens in posts %}
-        <section>
-            <div id="infos_post">
-                <h1>{{itens.title}}</h1>
-                <h4>{{itens.date_creat}}</h4>
-                <p>{{itens.summary}}</p>
-                <p><a href="">link</a></p>
-            </div>
-        </section>
-        {% endfor %}
-    </main>
+        <main>
+            {% for itens in posts %}
+                <div>
+                    <a href="#">{{itens.date_creat|date:"Y - F"}}</a>
+                </div>
+                <a href="" id="infos-post">
+                    <section>
+                        <h1>{{itens.title}}</h1>
+                        <h4><img width="15" height="15" src="https://img.icons8.com/ios/15/clock--v1.png" alt="clock--v1"/>{{itens.date_creat|date:"d/m/y"}} {{itens.date_creat|time:"H:i A"}}</h4>
+                        <p>{{itens.summary}}</p>
+                    </section>
+                </a>
+            {% endfor %}
+        </main>
+    <footer>
+        <div id="imgs-footer">
+            <a href="#"><img width="54" height="54" src="https://img.icons8.com/ios/54/linkedin.png" alt="linkedin"/></a>
+            <a href="#"><img width="54" height="54" src="https://img.icons8.com/glyph-neue/64/github.png" alt="github"/></a>
+        </div>
+    </footer>
 </body>
 </html>
